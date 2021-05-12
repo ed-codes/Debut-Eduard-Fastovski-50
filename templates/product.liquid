@@ -5,8 +5,11 @@
 {% section 'product-template' %}
 {% section 'product-recommendations' %}
 
-{% section 'hero-product' %}
-{% section 'feature-row-product' %}
+{% if product.metafields.image_with_overlay.enable == 'true' %}
+  {% section 'hero-product' %}
+{% endif %}
+
+{% comment %} {% section 'feature-row-product' %} {% endcomment %}
 
 {% if collection %}
   <div class="text-center return-link-wrapper page-width">
