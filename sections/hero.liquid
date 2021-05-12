@@ -123,6 +123,22 @@
   {%- endif -%}
 </div>
 
+<style>
+  @media (min-width: 750px ) {
+    #Hero-{{ section.id }} {
+      width: {{ section.settings.hero_width }}%; 
+      {% case section.settings.hero_alignment %}
+        {% when 'center' %}
+          margin-left: auto;
+          margin-right: auto;
+        {% when 'right' %}
+          margin-left: auto; 
+          margin-right: 0;
+      {% endcase %}
+    }
+  }
+</style>
+
 {% schema %}
 {
   "name": {
@@ -364,6 +380,35 @@
             "zh-TW": "固定寬度"
           },
           "value": "fixed_width"
+        }
+      ]
+    },
+    {
+      "type": "range",
+      "id": "hero_width",
+      "label": "Hero width (%)",
+      "default": 100,
+      "min": 20,
+      "max": 100,
+      "step": 2.5
+    },
+    {
+      "type": "select",
+      "id": "hero_alignment",
+      "label": "Hero Alignment",
+      "info": "Applied if not 100% width",
+      "options": [
+        {
+          "label": "Left",
+          "value": "left"
+        },
+        {
+          "label": "Center",
+          "value": "center"
+        },
+        {
+          "label": "Right",
+          "value": "right"
         }
       ]
     },
