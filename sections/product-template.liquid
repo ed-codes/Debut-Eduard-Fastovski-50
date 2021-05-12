@@ -273,6 +273,27 @@
           {{ product.description }}
         </div>
 
+        <div class="product-tabs">
+          <dl class="accordion">
+
+            {% if product.metafields.product_tabs.tab_1_content != blank %} 
+              <dt class="accordion__title accordion--open">{{product.metafields.product_tabs.tab_1_title}}</dt>
+              <dd>{{product.metafields.product_tabs.tab_1_content}}</dd>
+            {% endif %}
+
+            {% if product.metafields.product_tabs.tab_2_content != blank %} 
+              <dt class="accordion__title">{{product.metafields.product_tabs.tab_2_title}}</dt>
+              <dd>{{product.metafields.product_tabs.tab_2_content}}</dd>
+            {% endif %}
+
+            {% if product.metafields.product_tabs.tab_3_content != blank %} 
+              <dt class="accordion__title">{{product.metafields.product_tabs.tab_3_title}}</dt>
+              <dd>{{product.metafields.product_tabs.tab_3_content}}</dd>
+            {% endif %}
+
+          </dl>
+        </div>
+
         {% if section.settings.show_share_buttons %}
           {% include 'social-sharing', share_title: product.title, share_permalink: product.url, share_image: product.featured_media %}
         {% endif %}

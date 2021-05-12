@@ -1,0 +1,33 @@
+
+/* Product page  **********************/
+.accordion__title {
+  font-weight: 600;
+  padding: .5rem 0;
+  border-top: 1px solid #ccc; 
+  border-bottom: 1px solid #ccc; 
+  position: relative;
+}
+.accordion__title:after {
+  content: '+';
+  font-size: 1.3rem;
+  font-weight: 400;
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.accordion--open.accordion__title:after {
+  content: "-"
+}
+.accordion dd {
+  margin-left: 0;
+  padding: 16px;
+  margin-bottom: 16px;
+  display: none;
+}
+.accordion--open + dd {
+  display: block;
+}
+
+
+
