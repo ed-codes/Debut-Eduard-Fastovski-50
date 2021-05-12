@@ -5,6 +5,12 @@
 {% section 'product-template' %}
 {% section 'product-recommendations' %}
 
+{% if product.metafields.image_with_overlay.enable == 'true' %}
+  {% section 'hero-product' %}
+{% endif %}
+
+{% comment %} {% section 'feature-row-product' %} {% endcomment %}
+
 {% if collection %}
   <div class="text-center return-link-wrapper page-width">
     <a href="{{ collection.url }}" class="btn btn--secondary btn--has-icon-before return-link">
